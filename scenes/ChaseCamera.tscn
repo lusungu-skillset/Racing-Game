@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpoci6mn6opuu"]
+
+[ext_resource type="Script" uid="uid://dalpktap7l6p" path="res://scripts/ChaseCamera.gd" id="1_1u5u2"]
+
+[node name="ChaseCameraRoot" type="Node3D"]
+
+[node name="ChaseCamera" type="Camera3D" parent="."]
+script = ExtResource("1_1u5u2")

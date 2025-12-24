@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxoqvqeo0lwev"]
+
+[ext_resource type="PackedScene" uid="uid://cc7na0dt48dqs" path="res://scenes/Road1.tscn" id="1_g6g7q"]
+[ext_resource type="PackedScene" uid="uid://bpoci6mn6opuu" path="res://scenes/ChaseCamera.tscn" id="2_dcv6s"]
+[ext_resource type="PackedScene" uid="uid://27ktks1dh714" path="res://scenes/ground.tscn" id="2_twxk2"]
+[ext_resource type="PackedScene" uid="uid://cybhfdqglj15o" path="res://scenes/truck.tscn" id="3_dv7it"]
+
+[node name="RoadDesert" type="Node3D"]
+
+[node name="truck" parent="." instance=ExtResource("3_dv7it")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.569, 1, 23.301)
+
+[node name="ChaseCameraRoot" parent="." instance=ExtResource("2_dcv6s")]
+
+[node name="TurnyRoad" parent="." instance=ExtResource("1_g6g7q")]
+transform = Transform3D(1, 0, 5.235988e-05, 0, 1, 0, -5.235988e-05, 0, 1, -4.5078506, 0, 5.544174)
+
+[node name="ground" parent="." instance=ExtResource("2_twxk2")]
+
+[connection signal="change_camera" from="truck" to="ChaseCameraRoot/ChaseCamera" method="_on_truck_change_camera"]
+
+[editable path="ChaseCameraRoot"]
+[editable path="TurnyRoad"]
+[editable path="TurnyRoad/Node3D"]
+[editable path="TurnyRoad/Node3D/road-curve2"]
+[editable path="TurnyRoad/Node3D/road-curve-barrier2"]
+[editable path="TurnyRoad/Node3D23"]
+[editable path="TurnyRoad/Node3D23/road-curve2"]
+[editable path="TurnyRoad/Node3D23/road-curve-barrier2"]
+[editable path="TurnyRoad/Node3D29"]
+[editable path="TurnyRoad/Node3D29/road-curve2"]
+[editable path="TurnyRoad/Node3D29/road-curve-barrier2"]
+[editable path="TurnyRoad/road-end"]
+[editable path="TurnyRoad/road-straight-barrier-half"]
+[editable path="TurnyRoad/road-straight"]
+[editable path="TurnyRoad/road-end2"]
+[editable path="TurnyRoad/road-straight-barrier-half2"]
+[editable path="TurnyRoad/road-straight-barrier-half3"]
+[editable path="TurnyRoad/road-straight-barrier-half4"]
+[editable path="TurnyRoad/road-straight-barrier-half5"]
+[editable path="TurnyRoad/road-straight-barrier-half6"]
+[editable path="TurnyRoad/road-straight-barrier-half7"]
+[editable path="TurnyRoad/road-straight-barrier-half8"]
+[editable path="TurnyRoad/road-straight-barrier-half9"]
+[editable path="TurnyRoad/road-straight-barrier-half10"]
+[editable path="TurnyRoad/road-straight-barrier-half11"]
+[editable path="TurnyRoad/road-straight-barrier-half12"]
+[editable path="TurnyRoad/road-straight-barrier-half13"]
+[editable path="TurnyRoad/road-straight-barrier-half14"]
+[editable path="TurnyRoad/road-straight-barrier-half15"]
+[editable path="TurnyRoad/road-straight-barrier-half16"]
+[editable path="TurnyRoad/road-straight-barrier-half17"]
+[editable path="TurnyRoad/road-straight-barrier-half18"]
+[editable path="TurnyRoad/road-straight-barrier-half19"]

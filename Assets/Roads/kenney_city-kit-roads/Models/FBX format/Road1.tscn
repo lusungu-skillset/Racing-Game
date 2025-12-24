@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc7na0dt48dqs"]
+
+[ext_resource type="PackedScene" uid="uid://buxsmdchsbenr" path="res://Curve.tscn" id="1_e7c00"]
+[ext_resource type="PackedScene" uid="uid://cn5q3m2ythnx8" path="res://Straight.tscn" id="2_dcu3o"]
+
+[node name="TurnyRoad" type="Node3D"]
+
+[node name="Node3D" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 1.021389)
+
+[node name="Node3D23" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -49, 0, -77.97861)
+
+[node name="Node3D29" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 32, 0, -60.97861)
+
+[node name="Node3D18" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 140, 0, -59.97861)
+
+[node name="Node3D4" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(-4.371139e-07, 0, -10, 0, 10, 0, 10, 0, -4.371139e-07, -0.07857895, 0, 40.63251)
+
+[node name="Node3D27" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(-4.371139e-07, 0, -10, 0, 10, 0, 10, 0, -4.371139e-07, 61.921417, 0, -41.36749)
+
+[node name="Node3D30" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(-4.371139e-07, 0, -10, 0, 10, 0, 10, 0, -4.371139e-07, 3.9214172, 0, -41.36749)
+
+[node name="Node3D16" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(-4.371139e-07, 0, -10, 0, 10, 0, 10, 0, -4.371139e-07, 139.8613, 0, 11.334812)
+
+[node name="Node3D5" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(-10, 0, -8.742278e-07, 0, 10, 0, 8.742278e-07, 0, -10, -19.931778, 0, 40.63251)
+
+[node name="Node3D24" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(-10, 0, -8.742278e-07, 0, 10, 0, 8.742278e-07, 0, -10, -38.931778, 0, -62.36749)
+
+[node name="Node3D31" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(-10, 0, -8.742278e-07, 0, 10, 0, 8.742278e-07, 0, -10, -15.931778, 0, -41.36749)
+
+[node name="Node3D28" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(-10, 0, -8.742278e-07, 0, 10, 0, 8.742278e-07, 0, -10, 42.068222, 0, -41.36749)
+
+[node name="Node3D20" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(-10, 0, -8.742278e-07, 0, 10, 0, 8.742278e-07, 0, -10, -68.93178, 0, -9.367489)
+
+[node name="Node3D6" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -29.931168, 0, 21.632511)
+
+[node name="Node3D32" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -23.931168, 0, -53.36749)
+
+[node name="Node3D7" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, -49.931168, 0, 21.632511)
+
+[node name="Node3D22" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, -68.93117, 0, -77.36749)
+
+[node name="Node3D14" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, 72.50821, 0, 21.632511)
+
+[node name="Node3D25" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, 13.508209, 0, -60.367493)
+
+[node name="Node3D26" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, 72.50821, 0, -59.36749)
+
+[node name="Node3D12" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(0.36781844, -0.0031585472, -9.993233, 0.08586919, 9.999633, -3.7534633e-09, 9.992866, -0.08581108, 0.36783198, 63.54962, 0, 90.63251)
+
+[node name="Node3D9" parent="." instance=ExtResource("1_e7c00")]
+transform = Transform3D(-10, 0, -8.742278e-07, 0, 10, 0, 8.742278e-07, 0, -10, -50.931168, 0, 90.63251)
+
+[node name="Node3D2" parent="." instance=ExtResource("2_dcu3o")]
+transform = Transform3D(50, 0, 0, 0, 10, 0, 0, 0, 10, -34.491787, 0, -3.9314785)
+
+[node name="Node3D19" parent="." instance=ExtResource("2_dcu3o")]
+transform = Transform3D(50, 0, 0, 0, 10, 0, 0, 0, 10, 105.50821, 0, -64.93148)
+
+[node name="Node3D21" parent="." instance=ExtResource("2_dcu3o")]
+transform = Transform3D(-2.1855694e-06, 0, 10, 0, 10, 0, -50, 0, -4.371139e-07, -74.49179, 0, -43.93148)
+
+[node name="Node3D17" parent="." instance=ExtResource("2_dcu3o")]
+transform = Transform3D(3.8146973e-06, 0, 9.608035, 0, 10, 0, -54.38836, 0, 1.1920929e-06, 145.04784, 0.257905, -23.3041)
+
+[node name="Node3D15" parent="." instance=ExtResource("2_dcu3o")]
+transform = Transform3D(50, 0, 0, 0, 10, 0, 0, 0, 10, 106.659485, 0, 16.44037)
+
+[node name="Node3D13" parent="." instance=ExtResource("2_dcu3o")]
+transform = Transform3D(-2.1855694e-06, -3.3087225e-23, 9.999999, 0.63964564, 9.999181, 5.5919607e-09, -49.995907, 0.12792914, -4.370781e-07, 67.84894, 0, 56.013237)
+
+[node name="Node3D10" parent="." instance=ExtResource("2_dcu3o")]
+transform = Transform3D(50, 0, 0, 0, 10, 0, 0, 0, 10, -17.491787, 0, 96.01324)
+
+[node name="Node3D11" parent="." instance=ExtResource("2_dcu3o")]
+transform = Transform3D(50, 0, 0, 0, 10, 0, 0, 0, 10, 28.508213, 0, 96.01324)
+
+[node name="Node3D8" parent="." instance=ExtResource("2_dcu3o")]
+transform = Transform3D(-2.1855694e-06, 0, 10, 0, 10, 0, -50, 0, -4.371139e-07, -55.49179, 0, 55.565903)
+
+[node name="Node3D3" parent="." instance=ExtResource("2_dcu3o")]
+transform = Transform3D(-8.742278e-07, 0, 10, 0, 10, 0, -20, 0, -4.371139e-07, 5.0687923, 0, 20.923702)

@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://clbpfoxeajy6p"]
+
+[ext_resource type="Script" uid="uid://cu8m6kfcb1flu" path="res://scripts/MainMenu.gd" id="1_yqorp"]
+[ext_resource type="Texture2D" uid="uid://vw160ttm7c8s" path="res://bg/Download AI generated Racing game background for free.jpg" id="2_2wh52"]
+[ext_resource type="FontFile" uid="uid://d18enxv3rkgvl" path="res://fonts/static/Orbitron-Black.ttf" id="3_ow34m"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqorp")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2wh52")
+stretch_mode = 6
+
+[node name="MainMenu" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="StartButton" type="Button" parent="MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_ow34m")
+theme_override_font_sizes/font_size = 31
+text = "Start Race"
+
+[node name="SelectTrackButton" type="Button" parent="MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_ow34m")
+theme_override_font_sizes/font_size = 31
+text = "Select Track"
+
+[node name="SelectCarButton" type="Button" parent="MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_ow34m")
+theme_override_font_sizes/font_size = 31
+text = "Select Vehicle"
+
+[connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/SelectTrackButton" to="." method="_on_select_track_button_pressed"]
+[connection signal="pressed" from="MainMenu/SelectCarButton" to="." method="_on_select_car_button_pressed"]

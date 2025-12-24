@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwelj6djosjxd"]
+
+[ext_resource type="PackedScene" uid="uid://w5uomkhfldhx" path="res://Assets/Vehicles/kenney_car-kit/Models/GLB format/sedan-sports.glb" id="1_wx3vw"]
+[ext_resource type="Script" uid="uid://draho6w0yps5u" path="res://scripts/sedan_sports.gd" id="2_itlvq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wx3vw"]
+size = Vector3(1.3248291, 1.0973053, 2.861267)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_itlvq"]
+height = 1.2216797
+radius = 0.27001953
+
+[node name="sedan-sports" instance=ExtResource("1_wx3vw")]
+script = ExtResource("2_itlvq")
+
+[node name="body" parent="." index="0"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.15, -0.025)
+
+[node name="wheel-back-left" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.3, 0.6338833)
+
+[node name="wheel-back-right" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.3, 0.64191747)
+
+[node name="wheel-front-left" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.3, -0.69284666)
+
+[node name="wheel-front-right" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.3, -0.69284666)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016418457, 0.92350006, -0.079193115)
+shape = SubResource("BoxShape3D_wx3vw")
+
+[node name="WheelBackCollision" type="CollisionShape3D" parent="." index="6"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.013183594, 0.30075538, 0.62708557)
+shape = SubResource("CylinderShape3D_itlvq")
+
+[node name="wheelFrontCollision" type="CollisionShape3D" parent="." index="7"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.013183594, 0.30075538, -0.700927)
+shape = SubResource("CylinderShape3D_itlvq")
+
+[node name="WheelsFrontRaysCast" type="RayCast3D" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0094566345, 0.39553475, 0.6476568)
+
+[node name="WheelsBackRaysFront" type="RayCast3D" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0094566345, 0.39553475, -0.6754366)
+
+[node name="CameraPositions" type="Node3D" parent="." index="10"]
+
+[node name="PositionClose" type="Marker3D" parent="CameraPositions" index="0"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.7841195, 1.5, 2.4858985)
+
+[node name="PositionFar" type="Marker3D" parent="CameraPositions" index="1"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.6481566, 0.36358654, -5.209285)

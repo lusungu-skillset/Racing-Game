@@ -1,0 +1,135 @@
+[gd_scene load_steps=7 format=3 uid="uid://clleixmjgx5lp"]
+
+[ext_resource type="Script" uid="uid://b0lb7l2k2rgj5" path="res://scripts/ResuiltsUI.gd" id="1_vislc"]
+[ext_resource type="FontFile" uid="uid://d18enxv3rkgvl" path="res://fonts/static/Orbitron-Black.ttf" id="2_5p13c"]
+[ext_resource type="FontFile" uid="uid://dfbr58qpsffpf" path="res://fonts/static/Orbitron-Bold.ttf" id="3_n6v40"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7siys"]
+bg_color = Color(0, 0, 0, 0.53333336)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_woeti"]
+bg_color = Color(0.5647059, 0.105882354, 0.05490196, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1kx3"]
+bg_color = Color(0.5647059, 0.105882354, 0.05490196, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="ResultsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vislc")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(600, 350)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7siys")
+
+[node name="Label_Title" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = -11.5
+offset_right = 60.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5p13c")
+theme_override_font_sizes/font_size = 40
+text = "RACE FINISHED!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+
+[node name="Label_Position" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -87.0
+offset_right = 87.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5p13c")
+theme_override_font_sizes/font_size = 30
+text = "Position: X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Time" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -136.0
+offset_right = 101.0
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5p13c")
+theme_override_font_sizes/font_size = 26
+text = "Time: 00:00.00"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -83.0
+offset_top = -149.0
+offset_right = 77.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="ReplayButton" type="Button" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n6v40")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_woeti")
+text = "Replay"
+
+[node name="MenuButton" type="Button" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n6v40")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_x1kx3")
+text = "Main Menu"
+
+[connection signal="pressed" from="Panel/HBoxContainer/ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

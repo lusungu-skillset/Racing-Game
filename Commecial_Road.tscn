@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cusv3153rc4wl"]
+
+[ext_resource type="PackedScene" uid="uid://0aw25vaf8fpg" path="res://Assets/environment/kenney_city-kit-commercial_2.1/Models/GLB format/building-a.glb" id="1_oqwuj"]
+
+[node name="Commecial" type="Node3D"]
+
+[node name="building-a2" parent="." instance=ExtResource("1_oqwuj")]
+transform = Transform3D(1.0023587, 0.09902345, 0.17428444, -0.088118255, 1.3773177, 0.08369992, -0.16706805, -0.13233998, 1.0015082, -3.546432, 0.04678142, 0.15589595)

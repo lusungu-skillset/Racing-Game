@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cflqvw2mub8el"
+path="res://.godot/imported/roadPitEntry.obj-22bacc55a4bc5f4af5835d65ab852ece.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roadPitEntry.obj-22bacc55a4bc5f4af5835d65ab852ece.mesh"]
+
+source_file="res://Assets/environment/kenney_racing-kit/Models/OBJ format/roadPitEntry.obj"
+dest_files=["res://.godot/imported/roadPitEntry.obj-22bacc55a4bc5f4af5835d65ab852ece.mesh", "res://.godot/imported/roadPitEntry.obj-22bacc55a4bc5f4af5835d65ab852ece.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

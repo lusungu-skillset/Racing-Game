@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfmmbvtw1decd"]
+
+[ext_resource type="ArrayMesh" uid="uid://dvl2gecb3ghav" path="res://Assets/Vehicles/kenney_car-kit/Models/OBJ format/delivery-flat.obj" id="1_dy4m5"]
+[ext_resource type="Script" uid="uid://di327abi7u0wj" path="res://AICars/AIScript/AICarAI.gd" id="1_hud0c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hm5nq"]
+size = Vector3(6.3587914, 4.330986, 13.256653)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g5vof"]
+height = 5.259884
+radius = 0.92041016
+
+[node name="AICar3" type="CharacterBody3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+script = ExtResource("1_hud0c")
+
+[node name="body" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4, 0, -3.496911e-07, 0, 4, 0, 3.496911e-07, 0, -4, 0, 0, 0)
+mesh = ExtResource("1_dy4m5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19418907, 3.6196785, -0.236969)
+shape = SubResource("BoxShape3D_hm5nq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.005777334, -0.9999141, -0.011775338, 0.99977535, -0.0060159327, 0.020329088, -0.020398175, -0.011655245, 0.9997241, -0.18969183, 1.1022903, 2.5848966)
+shape = SubResource("CylinderShape3D_g5vof")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.0037561231, -0.9999906, 0.0021858334, 0.9998347, 0.0037944056, 0.017780162, -0.017788287, 0.0021186825, 0.99983954, -0.027117133, 1.2948198, -4.0619287)
+shape = SubResource("CylinderShape3D_g5vof")

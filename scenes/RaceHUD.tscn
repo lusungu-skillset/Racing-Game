@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsrtsr68nhlae"]
+
+[ext_resource type="Script" uid="uid://c6ydm0r6c0veq" path="res://scripts/RaceHUD.gd" id="1_pd5au"]
+[ext_resource type="FontFile" uid="uid://d18enxv3rkgvl" path="res://fonts/static/Orbitron-Black.ttf" id="2_o2ogf"]
+
+[node name="RaceHUD" type="CanvasLayer"]
+script = ExtResource("1_pd5au")
+
+[node name="Label_Position" type="Label" parent="."]
+offset_right = 1.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("2_o2ogf")
+theme_override_font_sizes/font_size = 30
+
+[node name="Label_Lap" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -0.5
+offset_right = 0.5
+offset_bottom = 33.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_o2ogf")
+theme_override_font_sizes/font_size = 25
+
+[node name="Label_Countdown" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1.0
+offset_bottom = 33.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_o2ogf")
+theme_override_font_sizes/font_size = 25

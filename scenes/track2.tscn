@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbuiyj44eocar"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7bf41"]
+size = Vector2(10000, 10000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pay67"]
+size = Vector3(300, 1, 300)
+
+[node name="track2" type="Node3D"]
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="GroundPlane" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("PlaneMesh_7bf41")
+
+[node name="GroundCollision" type="StaticBody3D" parent="Ground"]
+
+[node name="collision" type="CollisionShape3D" parent="Ground/GroundCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_pay67")

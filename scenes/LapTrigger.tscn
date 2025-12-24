@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxqscqekhr6ij"]
+
+[ext_resource type="Script" uid="uid://dryinl7ax4p4a" path="res://scripts/LapTrigger.gd" id="1_d7q6v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pwq8u"]
+size = Vector3(1139.4614, 5, 570)
+
+[node name="LapTrigger" type="Area3D"]
+script = ExtResource("1_d7q6v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4555664, 0, -0.057006836)
+shape = SubResource("BoxShape3D_pwq8u")

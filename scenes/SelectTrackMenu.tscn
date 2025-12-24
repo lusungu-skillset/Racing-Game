@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhaky6dkhxqd7"]
+
+[ext_resource type="Script" uid="uid://j0paa51ddvle" path="res://scripts/SelectTrackMenu.gd" id="1_r12h1"]
+[ext_resource type="Texture2D" uid="uid://jhg1h37jewp2" path="res://bg/Racing Background Photos, Download The BEST Free Racing Background Stock Photos & HD Images.jpg" id="2_fnlnp"]
+[ext_resource type="FontFile" uid="uid://dfbr58qpsffpf" path="res://fonts/static/Orbitron-Bold.ttf" id="3_pejbe"]
+
+[node name="SelectTrackMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r12h1")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fnlnp")
+stretch_mode = 6
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="TrackLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="PreviousButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pejbe")
+theme_override_font_sizes/font_size = 20
+text = "Previous"
+
+[node name="NextButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/outline_size = 4
+theme_override_constants/icon_max_width = 4
+theme_override_constants/align_to_largest_stylebox = 4
+theme_override_constants/line_spacing = 4
+theme_override_fonts/font = ExtResource("3_pejbe")
+theme_override_font_sizes/font_size = 20
+text = "Next"
+
+[node name="ConfirmButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pejbe")
+theme_override_font_sizes/font_size = 40
+text = "Confirm"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]

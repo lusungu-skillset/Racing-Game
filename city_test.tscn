@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjbmf3nvlvwf8"]
+
+[ext_resource type="PackedScene" uid="uid://ccv3d0uyasgeq" path="res://h_terrain.tscn" id="1_twfpr"]
+
+[node name="CityThree" type="Node3D"]
+
+[node name="HTerrain" parent="." instance=ExtResource("1_twfpr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59987223, 1.1920929e-07, 1.998116)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjrubqp8i1wq8"]
+
+[ext_resource type="ArrayMesh" uid="uid://xroqoywjgbtx" path="res://Assets/Vehicles/kenney_car-kit/Models/OBJ format/truck-flat.obj" id="1_1xkks"]
+[ext_resource type="Script" uid="uid://di327abi7u0wj" path="res://AICars/AIScript/AICarAI.gd" id="1_iqh75"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iqh75"]
+size = Vector3(5.7049446, 4.4067917, 11.220069)
+
+[node name="AICar1" type="CharacterBody3D"]
+script = ExtResource("1_iqh75")
+
+[node name="body" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4, 0, -3.496911e-07, 0, 4, 0, 3.496911e-07, 0, -4, 0, 0, 0)
+mesh = ExtResource("1_1xkks")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007463455, 3.3383675, -0.11583376)
+shape = SubResource("BoxShape3D_iqh75")

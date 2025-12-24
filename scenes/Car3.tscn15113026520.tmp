@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfqm2bpuhrl5h"]
+
+[ext_resource type="Script" uid="uid://dlg47q7e2vuuv" path="res://scenes/Car3.gd" id="1_elxas"]
+[ext_resource type="ArrayMesh" uid="uid://c0wkerw1cij4j" path="res://Assets/Vehicles/kenney_car-kit/Models/OBJ format/police.obj" id="2_bmc1w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sjtxe"]
+size = Vector3(1.4424438, 1.4893188, 3.3573608)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_j8yo7"]
+
+[node name="Car3" type="CharacterBody3D"]
+script = ExtResource("1_elxas")
+
+[node name="body" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_bmc1w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040374756, 0.70478034, -0.14559937)
+shape = SubResource("BoxShape3D_sjtxe")
+
+[node name="wheel_front_left" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.022471135, 0.11071138, 0.007810532, -0.0026512477, 0.0016323642, -0.53719616, -0.57100374, 0.0043493286, 0.0028016479, -0.4251786, 0.30052942, 0.8109284)
+mesh = SubResource("CylinderMesh_j8yo7")
+
+[node name="wheel_back_left" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.022471135, 0.11071138, 0.007810532, -0.0026512477, 0.0016323642, -0.53719616, -0.57100374, 0.0043493286, 0.0028016479, -0.47546285, 0.2913571, -0.80761665)
+mesh = SubResource("CylinderMesh_j8yo7")
+
+[node name="wheel_front_right" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.020186935, 0.11072185, 0.001690875, -0.0023770034, 0.00047788414, -0.40973446, -0.5120514, 0.0043628425, 0.0019686962, 0.43355832, 0.25286478, 0.82895476)
+mesh = SubResource("CylinderMesh_j8yo7")
+
+[node name="wheel_back_right" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.020186935, 0.11072185, 0.0022042491, -0.0023770034, 0.00047788414, -0.53413576, -0.5120514, 0.0043628425, 0.002566421, 0.46204683, 0.33827007, -0.78280663)
+mesh = SubResource("CylinderMesh_j8yo7")
+
+[node name="CameraManager" type="Node3D" parent="."]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraManager"]
+spring_length = 6.0
+margin = 0.5
+
+[node name="Camera3D" type="Camera3D" parent="CameraManager/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5318966, 3.9319434)

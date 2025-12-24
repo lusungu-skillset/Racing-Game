@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://duc4n1p6emigk"]
+
+[ext_resource type="PackedScene" uid="uid://yx60loqcvht1" path="res://industries.tscn" id="1_0d5ds"]
+[ext_resource type="PackedScene" uid="uid://dg6uluk58aut2" path="res://road_two.tscn" id="2_1lbi8"]
+
+[node name="cityOne" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 539.35004, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="industries" parent="." instance=ExtResource("1_0d5ds")]
+transform = Transform3D(102.75151, 0, 0, 0, 8.560397, 0, 0, 0, 23.979017, -395.30002, 0, 371.95)
+metadata/_edit_group_ = true
+
+[node name="building-a2" parent="industries" index="0"]
+transform = Transform3D(4.6669827, -0.31051412, -0.011971546, 0.031037232, 46.89014, 0.749111, 0.0023957975, -2.5814, 13.608813, 10.362161, 0.03, 1.890564)
+
+[node name="building-b2" parent="industries" index="1"]
+transform = Transform3D(6.8126817, -1.0288609, -0.1580694, 0.09747499, 75.02427, 7.521633, 0.013597048, -22.32931, 25.279276, -11.297795, -0.7499995, -47.080994)
+visible = false
+
+[node name="building-c2" parent="industries" index="2"]
+transform = Transform3D(6.8925953, 0.0444936, -0.14090694, 0.0060782894, 49.687073, 2.4192746, 0.06959643, -8.745898, 13.743649, -3.8930666, 0, 4.2280884)
+
+[node name="building-d2" parent="industries" index="3"]
+transform = Transform3D(-13.167443, -0.3950555, 1.0267981, -0.043659773, 69.82253, 1.0039006, -0.6473716, 3.3261025, -20.952604, 8.821682, 4.725658, -45.804718)
+metadata/_edit_group_ = true
+
+[node name="building-d3" parent="industries" index="4"]
+transform = Transform3D(23.873466, 0, 0, 0, 48.29381, 3.4376078, 0, -5.644738, 29.410639, -41.704964, -2.6419322, 12.962885)
+metadata/_edit_group_ = true
+
+[node name="building-e2" parent="industries" index="5"]
+transform = Transform3D(8.504475, 1.7837036, 2.2556431, -0.49616802, 37.257504, 5.8066254, -0.49532896, -6.695693, 32.911385, -23.72774, 2.037562, -123.10559)
+
+[node name="building-f2" parent="industries" index="6"]
+transform = Transform3D(6.443655, 2.8959758, 0, -0.3753, 49.72196, 0, 0, 0, -22.222328, -20.46534, 25.849998, -34.631004)
+
+[node name="building-g2" parent="industries" index="7"]
+transform = Transform3D(6.9287944, -0.39930305, -0.11930238, 0.20948224, 13.143042, 4.7022777, -0.0058686384, -2.2907681, 26.999718, 10.181593, 23.651459, 34.29196)
+
+[node name="commecial" parent="industries" index="8"]
+transform = Transform3D(4.802267, 0, 0, 0, 58.48805, 0, 0, 0, 16.38371, -39.52549, 0, -85.168274)
+
+[node name="building-e2" parent="industries/commecial" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8314016, -0.10086264, 2.8859642)
+
+[node name="building-d2" parent="industries/commecial" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1133547, 0, 2.9118419)
+
+[node name="building-e3" parent="industries/commecial" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8003943, -0.21253389, 4.95086)
+
+[node name="StaticBody3D" parent="industries/commecial/building-e3/building-e" index="0"]
+visible = false
+
+[node name="Road Two" parent="." instance=ExtResource("2_1lbi8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.85, 0, 21.75)
+metadata/_edit_group_ = true
+
+[editable path="industries"]
+[editable path="industries/building-a2"]
+[editable path="industries/building-b2"]
+[editable path="industries/building-c2"]
+[editable path="industries/building-d2"]
+[editable path="industries/building-d3"]
+[editable path="industries/building-e2"]
+[editable path="industries/building-f2"]
+[editable path="industries/building-g2"]
+[editable path="industries/commecial"]
+[editable path="industries/commecial/building-e2"]
+[editable path="industries/commecial/building-d2"]
+[editable path="industries/commecial/building-e3"]
+[editable path="industries/commecial/building-f2"]
+[editable path="industries/commecial/building-g2"]

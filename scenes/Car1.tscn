@@ -1,0 +1,161 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpxwqka38r1ir"]
+
+[ext_resource type="ArrayMesh" uid="uid://gvbsby5tjy2e" path="res://Assets/Vehicles/kenney_car-kit/Models/OBJ format/ambulance.obj" id="2_v2nka"]
+[ext_resource type="ArrayMesh" uid="uid://cqt66elsh57vd" path="res://Assets/Vehicles/kenney_car-kit/Models/OBJ format/wheel-racing.obj" id="3_v2nka"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mx8ba"]
+friction = 1.2
+
+[sub_resource type="GDScript" id="GDScript_270uu"]
+script/source = "extends VehicleBody3D
+
+@export var engine_force_value: float = 20000
+@export var brake_force_value: float = 120.0
+@export var steering_angle: float = 1.2
+@export var max_speed: float = 80.0  
+
+var steering_input: float = 0.0
+var engine_input: float = 0.0
+
+func _physics_process(delta: float) -> void:
+	engine_input = Input.get_action_strength(\"drive_forward\") - Input.get_action_strength(\"drive_reverse\")
+	steering_input = Input.get_action_strength(\"steer_right\") - Input.get_action_strength(\"steer_left\")
+
+	# apply driving force
+	engine_force = engine_input * engine_force_value
+
+	# steering that reduces at high speed
+	var speed = linear_velocity.length()
+	var steer_factor = clamp(1.0 - (speed / max_speed), 0.25, 1.0)
+	steering = steering_input * steering_angle * steer_factor
+
+	# braking
+	if Input.is_action_pressed(\"drive_brake\"):
+		brake = brake_force_value
+	else:
+		brake = 0.0
+
+	# limit top speed
+	if speed > max_speed:
+		linear_velocity = linear_velocity.normalized() * max_speed
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1el3m"]
+size = Vector3(3.5, 3.5, 6.8)
+
+[sub_resource type="GDScript" id="GDScript_wpcwk"]
+script/source = "extends Node3D
+
+@export var target: NodePath
+@export var follow_height: float   = 3.8
+@export var follow_distance: float = 6.2
+@export var look_ahead: float      = 5.0
+@export var stiffness: float       = 12.0   # higher = snappier follow
+
+var car: Node3D
+
+func _ready() -> void:
+	car = get_node_or_null(target) as Node3D
+	if car == null:
+		car = get_parent() as Node3D
+	rotation = Vector3.ZERO
+
+func _physics_process(delta: float) -> void:
+	if car == null:
+		return
+
+	var basis: Basis     = car.global_transform.basis
+	var forward: Vector3 = -basis.z
+	var desired: Vector3 = car.global_transform.origin - forward * follow_distance + basis.y * follow_height
+	var t: float         = 1.0 - exp(-stiffness * delta)
+
+	global_transform.origin = global_transform.origin.lerp(desired, t)
+	look_at(car.global_transform.origin + forward * look_ahead, Vector3.UP)
+"
+
+[node name="Ambulance" type="VehicleBody3D"]
+transform = Transform3D(-0.24830103, 0, 0.96868277, 0, 1, 0, -0.96868277, 0, -0.24830103, 0, 0, 0)
+mass = 500.0
+physics_material_override = SubResource("PhysicsMaterial_mx8ba")
+linear_damp = 0.05
+angular_damp = 2.0
+script = SubResource("GDScript_270uu")
+engine_force_value = 1800.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.0000015, 0, -4.656613e-09, 0, 1, 0, 4.656613e-09, 0, 1.0000015, 0, 1.795224, 0)
+shape = SubResource("BoxShape3D_1el3m")
+
+[node name="BodyMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.0769315, 0, -1.7136335e-07, 0, 1.6507089, 0, 1.8067658e-07, 0, -1.9592167, 0, 0, 0)
+mesh = ExtResource("2_v2nka")
+
+[node name="FL" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-1.0008916, 0, -0.045562807, 0, 0.71498173, 0, 0.051788896, 0, -0.8805648, 1.0652095, 0.53656846, -2.0260348)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.2
+wheel_radius = 0.45
+wheel_friction_slip = 2.5
+suspension_travel = 0.25
+suspension_stiffness = 22.0
+damping_compression = 3.0
+damping_relaxation = 3.5
+
+[node name="FL_Mesh" type="MeshInstance3D" parent="FL"]
+transform = Transform3D(-1.3624903, 0, 0.20043665, 0, 2.5068853, 0, -0.13635463, 0, -2.0028117, 0.02351737, -0.07164949, -0.09324169)
+mesh = ExtResource("3_v2nka")
+
+[node name="FR" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-0.9437923, 0.011806123, 0.05824857, 0.014769388, 1.1295187, 0.11305159, -0.047959868, 0.115508504, -1.111447, -1.2067796, 0.716043, -2.0459614)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.2
+wheel_radius = 0.45
+wheel_friction_slip = 2.5
+suspension_travel = 0.25
+suspension_stiffness = 22.0
+damping_compression = 3.0
+damping_relaxation = 3.5
+
+[node name="FR_Mesh" type="MeshInstance3D" parent="FR"]
+transform = Transform3D(0.99284565, -0.024500586, 0.25300157, 0.03329724, 1.7291148, -0.22524194, -0.14310032, 0.23234388, 1.7029389, -0.04772961, -0.09687415, -0.031864762)
+mesh = ExtResource("3_v2nka")
+
+[node name="RL" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-1.0044029, 0, -0.0996051, 0, 0.69947845, 0, 0.12779395, 0, -0.7828504, 1.2525525, 0.4841007, 1.7404168)
+use_as_traction = true
+wheel_roll_influence = 0.2
+wheel_friction_slip = 1.8
+suspension_travel = 0.3
+suspension_stiffness = 30.0
+damping_compression = 2.0
+damping_relaxation = 2.2
+
+[node name="RL" type="MeshInstance3D" parent="RL"]
+transform = Transform3D(-1.2514166, 0, 0.2779342, 0, 2.4520342, 0, -0.14585662, 0, -2.3846176, 0.18292212, 0.038749397, 0.015167475)
+mesh = ExtResource("3_v2nka")
+
+[node name="RR" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-0.985716, 0.034079794, 0.11627564, 0.044235777, 0.77474517, -9.613931e-11, -0.14009511, 0.0048435973, -0.8181209, -1.2301546, 0.52984506, 1.8561232)
+use_as_traction = true
+wheel_roll_influence = 0.2
+wheel_friction_slip = 1.8
+suspension_travel = 0.3
+suspension_stiffness = 30.0
+damping_compression = 2.0
+damping_relaxation = 2.2
+
+[node name="RR_Mesh" type="MeshInstance3D" parent="RR"]
+transform = Transform3D(1.3433121, 0.14348911, 0.23778337, -0.089142784, 2.0445294, -0.08380066, -0.15812145, 0.0663729, 2.0673146, -0.22883761, 0.10610819, 0.08693576)
+mesh = ExtResource("3_v2nka")
+
+[node name="CameraRig" type="Node3D" parent="."]
+script = SubResource("GDScript_wpcwk")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraRig"]
+collision_mask = 0
+spring_length = 6.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig/SpringArm3D"]
+current = true

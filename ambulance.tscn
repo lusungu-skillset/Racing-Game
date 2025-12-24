@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://uhs7706uddbu"]
+
+[node name="Ambulance" type="VehicleBody3D"]

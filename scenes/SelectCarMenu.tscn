@@ -1,0 +1,124 @@
+[gd_scene load_steps=4 format=3 uid="uid://bthy3pw5nv7i7"]
+
+[ext_resource type="Script" uid="uid://bbukxm1m4koo7" path="res://scripts/SelectCarMenu.gd" id="1_v8hwv"]
+[ext_resource type="Texture2D" uid="uid://b16pcy6v0mcdg" path="res://bg/Red And Black Racing Background, Red And Black, Racing, Background Background Image And Wallpaper for Free Download (1).jpg" id="2_1kreo"]
+[ext_resource type="FontFile" uid="uid://dfbr58qpsffpf" path="res://fonts/static/Orbitron-Bold.ttf" id="3_2f87j"]
+
+[node name="SelectCarMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v8hwv")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1kreo")
+stretch_mode = 6
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.0
+offset_top = -323.0
+offset_right = 303.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CarContainer" type="VBoxContainer" parent="CenterContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="CarImage" type="TextureRect" parent="CenterContainer2/CarContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+stretch_mode = 5
+
+[node name="CarLabel" type="Label" parent="CenterContainer2/CarContainer"]
+layout_mode = 2
+
+[node name="StatsContainer" type="VBoxContainer" parent="CenterContainer2/CarContainer"]
+layout_mode = 2
+
+[node name="SpeedLabel" type="Label" parent="CenterContainer2/CarContainer/StatsContainer"]
+layout_mode = 2
+
+[node name="AccelerationLabel" type="Label" parent="CenterContainer2/CarContainer/StatsContainer"]
+layout_mode = 2
+
+[node name="HandlingLabel" type="Label" parent="CenterContainer2/CarContainer/StatsContainer"]
+layout_mode = 2
+
+[node name="CarName" type="Label" parent="CenterContainer2/CarContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -207.0
+offset_right = -2.0
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 36
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="PreviousButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_2f87j")
+theme_override_font_sizes/font_size = 20
+text = "Previous"
+
+[node name="NextButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_2f87j")
+theme_override_font_sizes/font_size = 20
+text = "Next"
+
+[node name="ConfirmButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/outline_size = 4
+theme_override_constants/icon_max_width = 4
+theme_override_constants/align_to_largest_stylebox = 4
+theme_override_constants/line_spacing = 4
+theme_override_fonts/font = ExtResource("3_2f87j")
+theme_override_font_sizes/font_size = 40
+text = "Confirm Selection"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]

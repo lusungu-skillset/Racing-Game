@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://n1aahowvptxe"
+path="res://.godot/imported/lightColored.obj-722c04741b87fe0457bb9cb5dd0667e8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/lightColored.obj-722c04741b87fe0457bb9cb5dd0667e8.mesh"]
+
+source_file="res://Assets/environment/kenney_racing-kit/Models/OBJ format/lightColored.obj"
+dest_files=["res://.godot/imported/lightColored.obj-722c04741b87fe0457bb9cb5dd0667e8.mesh", "res://.godot/imported/lightColored.obj-722c04741b87fe0457bb9cb5dd0667e8.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
